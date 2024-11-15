@@ -2,7 +2,7 @@
 
 ## Team Members
 
-### Abhinav Raghu
+### Abhinav R
 
 #### Frontend Contributions:
 - **Home Page**: Designed and developed the homepage of the website, ensuring a clean layout, user-friendly navigation, and a welcoming first impression for visitors.
