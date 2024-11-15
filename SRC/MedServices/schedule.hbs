@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="report_style.css">
+    <title>User Profile</title>
+
+    <script>
+        // Function to toggle between light and dark mode styles
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'report_style.css' ? 'report_dark.css' : 'report_style.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+    <style>
+        .content
+        {
+            line-height: 25px;
+        }
+
+        table a
+        {
+           text-decoration: none;
+           font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+            <li style="float:left"><a href="/SignedInPage" class="nav_con">VITAL</a></li>
+            <li class="nav_con">
+                <a href="/profile">
+                <img src="loggedin_profile.png" 
+                style="
+                float:right;
+                width:45px;
+                border-radius: 15px;
+                margin-top: -5px;
+                margin-right: 0px">
+                </a>
+            </li>
+           
+            <li class="nav_con">
+                <a href="#contact" style="margin-top: 2px;">
+                <button onclick="toggleStyles()"
+                style="
+                border-radius: 20px;
+                margin-top: -3px;
+                background-color: transparent;
+                border: 0;
+                ">
+
+                <img id="myImage" src="night-mode.png" alt="My Image"
+                style="
+                width: 25px;
+                height: 25px;
+                border: 0;
+                ">
+
+                </button>
+                </a>
+            </li>
+            <li><a href="/appointment" class="schedule" style="margin-top: 2px;">Appointment</a></li>
+            <li><a href="/hospitals_signed" class="schedule" style="margin-top: 2px;">Hospital</a></li>
+            <li class="nav_con"><a href="/schedule" style="margin-top: 2px;">Report</a></li>
+           
+    </ul>
+    
+    <div class="back_prof">
+        <div class="fadein">
+            <table>
+                <tr>
+                    <td>
+                        <img src="pdficon.png" height="100px" style="vertical-align: middle;">
+                        <a target="_blank" href="Rajath-Kumar.pdf" style="vertical-align: middle;">RP23894; March 5, 2019</a>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="pdficon.png" height="100px" style="vertical-align: middle;">
+                        <a target="_blank" href="Rajath-Kumar.pdf" style="vertical-align: middle;">RP56972; July 21, 2021</a>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="pdficon.png" height="100px" style="vertical-align: middle;">
+                        <a target="_blank" href="Rajath-Kumar.pdf" style="vertical-align: middle;">RP70123; January 10, 2023</a>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="pdficon.png" height="100px" style="vertical-align: middle;">
+                        <a target="_blank" href="Rajath-Kumar.pdf" style="vertical-align: middle;">RP12487; October 15, 2023</a>
+                     </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="pdficon.png" height="100px" style="vertical-align: middle;">
+                        <a target="_blank" href="Rajath-Kumar.pdf" style="vertical-align: middle;">RP89012; April 30, 2024</a>
+                     </td>
+                </tr>
+            </table>
+       </div>     
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-viewport');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            var elementsToObserve = document.querySelectorAll('.fadein');
+            elementsToObserve.forEach(function(element) {
+                observer.observe(element);
+            });
+        });
+    </script>   
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="readmore.css">
+    <title>User Profile</title>
+
+    <script>
+        // Function to toggle between light and dark mode styles
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'profile_style.css' ? 'profile_dark.css' : 'profile_style.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="nav">
+            <li style="float:left"><a href="/SignedInPage" class="nav_con">VITAL</a></li>
+            <li>
+                <a href="/login" class="login">
+                    &nbsp;&nbsp;Log in
+                </a>
+            </li>
+            <li>
+                <a href="/SignUpPage" target="_blank" 
+                class="sign_up">
+                    Sign up
+                </a>
+            </li>
+            
+            <li class="nav_con">
+                <a href="#contact" style="margin-top: 2px;">
+                <button onclick="toggleStyles()"
+                style="
+                border-radius: 20px;
+                margin-top: -3px;
+                background-color: transparent;
+                border: 0;
+                ">
+
+                <img id="myImage" src="night-mode.png" alt="My Image"
+                style="
+                width: 25px;
+                height: 25px;
+                border: 0;
+                ">
+
+                </button>
+                </a>
+            </li>
+            <li><a href="/appointment" class="schedule" style="margin-top: 2px;">Appointment</a></li>
+            <li><a href="/hospitals_signed" class="schedule" style="margin-top: 2px;">Hospital</a></li>
+            <li class="nav_con"><a href="/schedule" style="margin-top: 2px;">Report</a></li>
+           
+    </ul>
+
+    <h1></h1>
+    <table>
+        <tr>
+            <td style="padding-left: 40px; padding-right: 20px"><img src="general_public.jpg"
+                style="
+                    width:300px;
+                    border-radius: 20px;
+                    "></td>
+            <td style="border-right-color: white; padding-left: 30px;">
+                <h1>General Citizen</h1>
+                Our company is dedicated to providing essential medical support for general citizens through accessible healthcare services and community wellness programs ensuring comprehensive assistance and prioritizing the broader community's well-being.<br><br>
+
+In our commitment to accessible healthcare, we strive to break down barriers to medical assistance, ensuring that all individuals, regardless of background or circumstance, have access to the care they need. Through our network of healthcare facilities, mobile clinics, and telehealth services, we aim to reach underserved populations, remote areas, and those facing socioeconomic challenges, ensuring that no one is left behind in their pursuit of health and wellness.<br><br>
+
+Community wellness is at the forefront of our mission, as we recognize that health extends beyond individual medical care to encompass the well-being of entire communities. Our community wellness programs are designed to promote preventive healthcare, healthy lifestyle choices, and disease prevention strategies, empowering individuals to take charge of their health and contribute to the collective health of their communities.<br><br>
+
+We understand that comprehensive assistance goes beyond medical treatment to address the diverse needs and concerns of individuals within a community. That's why our approach encompasses a range of support services, including health education, preventive screenings, mental health counseling, and social support networks, ensuring that individuals receive holistic care that addresses their physical, emotional, and social well-being.<br><br>
+
+At the heart of our mission is a commitment to prioritizing the broader community's well-being, recognizing that the health of individuals and communities are intricately connected. By fostering a culture of health and wellness at the community level, we aim to create healthier, more resilient communities where individuals thrive, and everyone has the opportunity to lead fulfilling lives.<br><br>
+            </td>
+        </tr>
+    </table>
+  
+
+</body>
+</html>

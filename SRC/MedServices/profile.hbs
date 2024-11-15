@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="profile_style.css">
+    <title>User Profile</title>
+
+    <script>
+        // Function to toggle between light and dark mode styles
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'profile_style.css' ? 'profile_dark.css' : 'profile_style.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul>
+        <li style="float:left"><a href="/SignedInPage" class="nav_con">VITAL</a></li>
+        <li class="nav_con">
+            <img src="loggedin_profile.png" 
+            style="
+            float:right;
+            width:45px;
+            border-radius: 15px;
+            margin-top: -10px;
+            margin-right: 10px">
+        </li>
+        
+        <li class="nav_con">
+            <a href="#contact" style="margin-top: 2px;">
+            <button onclick="toggleStyles()"
+            style="
+            border-radius: 20px;
+            margin-top: -3px;
+            background-color: transparent;
+            border: 0;
+            ">
+
+            <img id="myImage" src="night-mode.png" alt="My Image"
+            style="
+            width: 25px;
+            height: 25px;
+            border: 0;
+            ">
+
+            </button>
+            </a>
+        </li>
+        <li><a href="/appointment" class="schedule" style="margin-top: 2px;">Appointment</a></li>
+        <li><a href="/hospitals_signed" class="schedule" style="margin-top: 2px;">Hospital</a></li>
+        <li class="nav_con"><a href="/schedule" style="margin-top: 2px;">Report</a></li>
+           
+    </ul>
+    <div class="back_prof">
+        <table border="0">
+            {{#if user}}
+                <tr>
+                    <td rowspan="6" style="font-size: 50px;">
+                        <img src="loggedin_profile.png" 
+                        style="
+                        width: 250px;
+                        border-radius: 80px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        "> <br>
+                        Your Profile
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Name:</b>&nbsp;&nbsp; {{ user.name }}</td>
+                </tr>
+                <tr>
+                    <td><b>Mobile:</b>&nbsp;&nbsp; {{ user.mobile }}</td>
+                </tr>
+                <tr>
+                    <td><b>Email:</b>&nbsp;&nbsp; {{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td><b>Gender:</b>&nbsp;&nbsp; {{ user.gender }}</td>
+                </tr>
+                <tr>
+                    <td><b>Nationality:</b>&nbsp;&nbsp; {{ user.nationality }}</td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td colspan="2">User data not available</td>
+                </tr>
+            {{/if}}
+        </table>
+    </div>
+
+    <!-- Add your additional HTML content here -->
+
+</body>
+</html>

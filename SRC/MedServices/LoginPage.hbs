@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #E0E0E0;
+            overflow: visible;
+        }
+
+        .back_bord {
+            display: flex;
+            width: 80%;
+            height: 80%;
+            align-items: center;
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-bottom: 1%;
+            margin-right: 2%;
+            background-color: rgba(0, 0, 0, 0.295);
+            border-radius: 20px;
+            padding: 20px;
+            overflow: visible;
+            font-family: Montserrat;
+        }
+
+        .left_elem {
+            flex: 1;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            margin-right: 2%;
+            padding: 10px;
+            font-size: 150%;
+        }
+        
+        .right-elem {
+            flex: 0.4;
+            background-color: white;
+            border-radius: 20px;
+            text-align: center;
+            /* height: 100%; */
+            overflow: visible;
+            padding: 24px;
+            width: 20px;
+        }
+
+        .circle {
+            filter: blur(7px);
+            position: fixed;
+            width: 50%;
+            height: 50%;
+            border-radius: 100%;
+            background: #E9C360;
+            margin-left: -15%;
+            margin-top: 30%;
+            margin-bottom: 0%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle2
+        {
+            position: fixed;
+            filter: blur(7px);  
+            width: 80%;
+            height: 80%;
+            border-radius: 100%;
+            background: #2F4159;
+            margin-left: 75%;
+            margin-top: -15%;
+            margin-bottom: 0%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .input_vals {
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .input_vals input {
+            background-color: transparent;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        td {
+            padding: 10px;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        table input {
+            height: 30px;
+            border-color: gainsboro;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body> 
+
+    <div class="circle"></div>
+    <div class="circle2"></div>
+    {{#if error}}
+        <script>
+            alert('{{error}}');
+        </script>
+    {{/if}}
+
+    <div class="back_bord">
+        
+        <div class="left_elem">
+            <p><b>&nbsp;&nbsp;&nbsp;Login</b></p>
+            <form id="loginForm" action="/login" method="post" onsubmit="validateForm(event)">
+                <div class="table">
+                    <table border="0">
+                        <tr>
+                            <td><label for="email">Email ID:</label></td>
+                            <td><input type="email" id="email" name="email" placeholder="   username@gmail.com" required></td>
+                        </tr>
+                        
+                        <tr>
+                            <td><label for="password">Enter Password:</label></td>
+                            <td><input type="password" id="password" name="password" required></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center;">
+                                <button type="submit" style="height: 55px; width: 150px; border-radius: 15px; font-size: larger;">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="right-elem">
+            <img src="login_pic.jpg" width="90%" height="90%">
+        </div>
+    </div>
+
+     <script>
+        function validateForm(event) {
+            document.getElementById('email').style.borderColor = "gainsboro";
+            document.getElementById('password').style.borderColor = "gainsboro";
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Basic validation
+            if (email === '' || password === '') {
+                alert('Please fill in all fields');
+                event.preventDefault();
+            } else {
+                // Allow the form to submit, the server will handle the verification
+            }
+        }
+    </script>
+
+</body>
+</html>

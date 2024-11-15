@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        .zoom-animation {
+            animation: zoom 2s ease-in-out forwards;
+        }
+
+        .fade-in {
+            animation: fadein 1s ease-in-out 1.5s forwards; /* Delayed fade-in animation */
+            opacity: 0;
+            color: aliceblue;
+            font-family: 'Montserrat';
+            font-size: 80px;
+            margin-right: -40px;
+
+        }
+
+        @keyframes zoom {
+            0% {
+                transform: scale(0.1) translateX(95%);
+            }
+            50% {
+                transform: scale(1) translateX(40%);
+            }
+            100% {
+                transform: scale(0.7) translateX(-10%);
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div class="zoom-animation" id="zoomElement">
+        <!-- Your content here -->
+        <img src="/success.png" alt="Your Image">
+    </div>
+
+    <div class="fade-in">
+        <p>Successful!</p>
+    </div>  
+
+    <script>
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 3000);   
+    </script>
+
+</body>
+</html>

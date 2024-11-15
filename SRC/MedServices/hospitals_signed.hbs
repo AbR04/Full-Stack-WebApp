@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="hospital_style.css" />
+
+    <script>
+        function toggleStyles() {
+            const body = document.body;
+            const currentBackgroundColor = body.style.backgroundColor;
+            const currentTextColor = body.style.color;
+
+            // Check current background color to determine which mode it is
+            if (currentBackgroundColor === 'white' || currentBackgroundColor === '') {
+                // Switch to dark mode
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+            } else {
+                // Switch to light mode
+                body.style.backgroundColor = 'white';
+                body.style.color = 'black';
+            }
+        }
+    </script>
+
+  </head>
+  <body>
+
+    <ul class="nav">
+        <li style="float:left"><a href="/SignedInPage" class="nav_con">VITAL</a></li>
+        
+        <li>
+            <a href="/profile">
+                <img src="loggedin_profile.png" 
+                style="
+                float:right;
+                width:42px;
+                height: 44px;
+                border-radius: 20px;
+                margin-top: -5px;
+                margin-right: -20px">
+            </a>
+        </li>
+       
+        <li class="nav_con">
+            <a style="margin-top: 2px;">
+            <button onclick="toggleStyles()"
+            style="
+            border-radius: 20px;
+            margin-top: -3px;
+            background-color: transparent;
+            border: 0;
+            ">
+
+            <img id="myImage" src="night-mode.png" alt="My Image"
+            style="
+            width: 25px;
+            height: 25px;
+            border: 0;
+            ">
+
+            </button>
+            </a>
+        </li>
+        <li><a href="/appointment" class="schedule" style="margin-top: 2px;">Appointment</a></li>
+        <li><a href="/hospitals_signed" class="schedule" style="margin-top: 2px;">Hospital</a></li>
+        <li class="nav_con"><a href="/schedule" style="margin-top: 2px;">Report</a></li>
+       
+    </ul>
+    <header class="main-header">
+        <div class="logo"><a href="#">Search...</a></div>
+        <div class="search-icon" style="color: black;">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </div>
+  
+        <div class="search-results">
+          <div class="search-input-container">
+            <input
+              type="text"
+              placeholder="Search Here..."
+              class="search-input"
+            />
+          </div>
+  
+          <div class="search-title">Featured Posts</div>
+  
+          <div class="results-container">
+            <ul>
+              <li>
+                <a href="https://www.asterhospitals.in/doctors/hospital/aster-cmi-bangalore-2146" target="_blank">
+                    <img src="Aster Hospital.png"><sup><sup><sup><sup>Aster</sup></sup></sup></sup>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank">
+                    <img src="BMS Hospital.png"><sup><sup><sup><sup>BMS</sup></sup></sup></sup>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+  
+      <script>
+        const allPosts = [
+        {
+            title: "Aster Hospital",
+            imageUrl: "Aster Hospital.png",
+            redirectUrl: "https://www.asterhospitals.in/doctors/hospital/aster-cmi-bangalore-2146"
+        },
+        {
+            title: "BMS Hospital",
+            imageUrl: "BMS Hospital.png",
+            redirectUrl: "#"
+        },
+        {
+            title: "Green City Hospital",
+            imageUrl: "Green City Hospital.png",
+            redirectUrl: "https://greencityhospitals.com/doctors/"
+        },
+        {
+            title: "Nethradhama Hospital",
+            imageUrl: "Nethradhama Hospital.png",
+            redirectUrl: "https://nethradhama.org/our-teams/"
+        },
+        {
+            title: "Maiya Hospital",
+            imageUrl: "Maiya Hospital.png",
+            redirectUrl: "https://maiyahospital.in/our-doctors/"
+        },
+        {
+            title: "Homeocare International Hospital",
+            imageUrl: "Homeocare International Hospital.png",
+            redirectUrl: "https://www.homeocareautoimmunediseases.com/index.html"
+        },
+        // Add redirectUrl for each post
+    ];
+    
+    const searchIcon = document.querySelector("header.main-header .search-icon");
+    const searchResults = document.querySelector(
+        "header.main-header .search-results"
+    );
+    const searchInput = document.querySelector(".search-results .search-input");
+    const searchTitle = document.querySelector(".search-results .search-title");
+    const resultsContainer = document.querySelector(".results-container");
+    
+    let filteredPosts = [];
+    
+    searchIcon.addEventListener("click", () => {
+        searchResults.classList.toggle("active");
+    });
+    
+    const populateSearchResults = () => {
+        const ul = document.createElement("ul");
+
+        filteredPosts.forEach((p) => {
+            const li = document.createElement("li");
+            const container = document.createElement("div"); // Container for image and text
+            const img = document.createElement("img");
+            const textContent = document.createElement("span");
+            const al1 = document.createElement("sup");
+            const al2 = document.createElement("sup");
+            const al3 = document.createElement("sup");
+            const al4 = document.createElement("sup");
+            const al5 = document.createElement("sup");
+
+            img.src = p.imageUrl;
+            img.alt = p.title;
+            img.style.width = "120px"; // Adjust the width of the image as needed
+            img.style.height = "90px"; // Adjust the height of the image as needed
+            img.style.borderRadius = "10px"; // Adjust the border radius as needed
+
+            textContent.textContent = p.title; // Set text content to the title of the post
+            textContent.style.marginLeft = "20px"; // Adjust the margin as needed
+            textContent.style.fontSize = "14px"; // Adjust the font size as needed
+            textContent.style.cursor = "pointer"; // Set cursor to pointer to indicate clickable
+
+            // Add click event listener to the list item
+            li.addEventListener("click", () => {
+                // Redirect to the corresponding webpage when clicked
+                window.location.href = p.redirectUrl;
+            });
+
+            container.appendChild(img); // Append image to container
+            // container.appendChild(textContent); // Append text content to container
+            container.appendChild(al1); // Append text content to container
+            al1.appendChild(al2); 
+            al2.appendChild(al3); 
+            al3.appendChild(al4); 
+            al4.appendChild(al5); 
+            al5.appendChild(textContent); 
+
+
+            li.appendChild(container); // Append container to list item
+            ul.appendChild(li); // Append list item to unordered list
+        });
+
+        resultsContainer.innerHTML = ""; // Clear existing content
+        resultsContainer.appendChild(ul); // Append unordered list to results container
+    };
+
+    
+    
+    
+    
+    searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+    
+        if (query) {
+        filteredPosts = allPosts.filter((post) => {
+            const title = post.title.toLowerCase();
+            return title.includes(query);
+        });
+    
+        populateSearchResults();
+        searchTitle.textContent = "Search Results";
+        } else {
+        searchTitle.textContent = "Featured Posts";
+        resultsContainer.innerHTML = `<ul>
+        <li>
+            <a href="#">
+                <img src="Aster Hospital.png" target="_blank"><sup><sup><sup><sup>Aster</sup></sup></sup></sup>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="BMS Hospital.png" target="_blank"><sup><sup><sup><sup>BMS</sup></sup></sup></sup>
+            </a>
+        </li>
+        </ul>`;
+        }
+    });
+  
+      </script>
+
+      <div class="collage">
+        <table class="hospital">
+            <tr>
+                <td><a href="https://www.asterhospitals.in/doctors/hospital/aster-cmi-bangalore-2146" target="_blank"><img src="Aster Hospital.png" alt="" width="100px"></a><br>Aster Hospital</td>
+                <td><a href=""><img src="BMS Hospital.png" alt="" width="100px"></a><br>BMS Hospital</td>
+                <td><a href="https://greencityhospitals.com/doctors/" target="_blank"><img src="Green City Hospital.png" alt="" height="220px"></a><br>Green City Hospital</td>
+            </tr>
+            <tr>
+                <td><a href="https://nethradhama.org/our-teams/" target="_blank"><img src="Nethradhama Hospital.png" alt=""></a><br>Nethradhama Hospital</td>
+                <td><a href="https://maiyahospital.in/our-doctors/" target="_blank"><img src="Maiya Hospital.png" alt=""></a><br>Maiya Hospital</td>
+                <td><a href="https://www.homeocareautoimmunediseases.com/index.html" target="_blank"><img src="Homeocare International Hospital.png" alt="" height="240px"></a><br>Homeocare International Hospital</td>
+            </tr>
+            <!-- <tr>
+                <td><img src="" alt=""></td>
+                <td><img src="" alt=""></td>
+                <td><img src="" alt=""></td>
+            </tr> -->
+        </table>
+      </div>
+
+    
+  </body>
+</html>

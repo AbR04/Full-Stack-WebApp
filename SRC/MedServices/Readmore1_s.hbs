@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="readmore.css">
+    <title>User Profile</title>
+
+    <script>
+        // Function to toggle between light and dark mode styles
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'profile_style.css' ? 'profile_dark.css' : 'profile_style.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="nav">
+            <li style="float:left"><a href="/SignedInPage" class="nav_con">VITAL</a></li>
+            <li>
+                <a href="/profile">
+                    <img src="loggedin_profile.png" 
+                    style="
+                    float:right;
+                    width:42px;
+                    height: 44px;
+                    border-radius: 20px;
+                    margin-top: -5px;
+                    margin-right: -20px">
+                </a>
+            </li>
+            
+            <li class="nav_con">
+                <a href="#contact" style="margin-top: 2px;">
+                <button onclick="toggleStyles()"
+                style="
+                border-radius: 20px;
+                margin-top: -3px;
+                background-color: transparent;
+                border: 0;
+                ">
+
+                <img id="myImage" src="night-mode.png" alt="My Image"
+                style="
+                width: 25px;
+                height: 25px;
+                border: 0;
+                ">
+
+                </button>
+                </a>
+            </li>
+            <li><a href="/appointment" class="schedule" style="margin-top: 2px;">Appointment</a></li>
+            <li><a href="/hospitals_signed" class="schedule" style="margin-top: 2px;">Hospital</a></li>
+            <li class="nav_con"><a href="/schedule" style="margin-top: 2px;">Report</a></li>
+           
+    </ul>
+
+    <h1></h1>
+    <table>
+        <tr>
+            <td style="padding-left: 40px; padding-right: 20px"><img src="elderly_ani.jpg"
+                style="
+                    width:300px;
+                    border-radius: 20px;
+                    "></td>
+            <td style="border-right-color: white; padding-left: 30px;">
+                <h1>Elderly</h1>
+                The elderly population, with its unique set of medical requirements and challenges, has a myriad of options available to seek assistance and support in maintaining their health and well-being. Primary care physicians serve as the cornerstone of healthcare for seniors, providing comprehensive assessments, managing chronic conditions, and offering preventive care measures tailored to their specific needs. Geriatric clinics, specialized in addressing age-related health issues, offer multidisciplinary care teams comprising geriatricians, nurses, social workers, and therapists, ensuring comprehensive and holistic management of seniors' health.<br><br>
+
+                In recent years, the advent of telehealth has revolutionized healthcare accessibility for older adults, enabling them to consult with healthcare providers remotely from the comfort of their homes. Through telehealth platforms, seniors can access medical advice, medication management, and even specialist consultations, overcoming barriers such as transportation challenges and mobility issues.<br><br>
+
+                Moreover, community outreach programs play a vital role in reaching out to elderly individuals who may face social isolation or lack awareness of available healthcare services. These initiatives not only provide information about healthcare resources but also offer companionship, social activities, and mental health support, contributing to the overall well-being of seniors.<br><br>
+
+                Senior centers serve as bustling hubs of activity, offering a wide array of services ranging from fitness classes and recreational activities to health screenings and educational workshops. These centers foster a sense of community and belonging among older adults while promoting healthy lifestyle choices and preventive healthcare practices.<br><br>
+
+                For seniors requiring more personalized care in the comfort of their own homes, home healthcare services offer invaluable assistance. Skilled nurses, therapists, and caregivers provide medical care, assistance with activities of daily living, and companionship, allowing seniors to age in place while maintaining their independence and dignity.<br><br>
+
+                In essence, the healthcare landscape for the elderly is rich with options, catering to diverse needs and preferences. Whether through traditional avenues like primary care, specialized geriatric services, or innovative approaches such as telehealth and community outreach, older adults have access to comprehensive healthcare resources tailored to support their unique journey towards healthy aging.<br><br>
+            </td>
+        </tr>
+    </table>
+  
+
+</body>
+</html>

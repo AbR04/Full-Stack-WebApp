@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #E0E0E0;
+            overflow: visible;
+            margin: auto;
+            width:  1268px;
+            margin-bottom: 0;
+            overflow: visible;
+        }
+
+        .back_bord {
+            display: flex;
+            width: 80%;
+            height: 80%;
+            align-items: center;
+            margin-top: 2%;
+            margin-left: 10%;
+            margin-bottom: 1%;
+            margin-right: 2%;
+            background-color: rgba(0, 0, 0, 0.295);
+            border-radius: 20px;
+            padding: 20px;
+            overflow: visible;
+            font-family: Montserrat;
+        }
+
+        .left_elem {
+            flex: 1;
+            background-color: white;
+            border-radius: 20px;
+            color: black;
+            margin-right: 2%;
+            padding: 10px;
+            font-size: 150%;
+        }
+
+        .right-elem {
+            flex: 0.4;
+            background-color: white;
+            border-radius: 20px;
+            text-align: center;
+            overflow: visible;
+            padding: 24px;
+            width: 20px;
+        }
+
+        .circle {
+            filter: blur(7px);
+            position: fixed;
+            width: 50%;
+            height: 50%;
+            border-radius: 100%;
+            background: #E9C360;
+            margin-left: -15%;
+            margin-top: 30%;
+            margin-bottom: 0%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .circle2 {
+            position: fixed;
+            filter: blur(7px);  
+            width: 80%;
+            height: 80%;
+            border-radius: 100%;
+            background: #2F4159;
+            margin-left: 75%;
+            margin-top: -15%;
+            margin-bottom: 0%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .input_vals {
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        .input_vals input {
+            background-color: transparent;
+        }
+
+        table {
+            margin: auto;
+        }
+
+        td {
+            padding: 10px;
+            font-size: medium;
+            font-weight: bold;
+        }
+
+        table input {
+            height: 30px;
+            border-color: gainsboro;
+            border-radius: 10px;
+        }
+
+        select {
+            width: 100%;
+            height: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="circle2"></div>
+
+    <div class="back_bord">
+        <div class="left_elem">
+            <p><b>&nbsp;&nbsp;&nbsp;Sign-up</b></p>
+            <form id="signupForm" action="/signup" method="post">
+                <div class="table">
+                    <table border="0">
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" id="name" name="name" required></td>
+                            <td><label for="mobile">Mobile Number:</label></td>
+                            <td><input type="tel" id="mobile" name="mobile" placeholder=" Enter 10 Digit Mobile No." required/></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">Email ID:</label></td>
+                            <td><input type="email" id="email" name="email" placeholder="   username@gmail.com" required></td>
+                            <td><label for="dob">Date of Birth:</label></td>
+                            <td><input type="date" id="dob" name="dob" required></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="gender">Gender:</label>
+                            </td>
+                            <td>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </td>
+                            <td><label for="nationality">Nationality:</label></td>
+                            <td><input type="text" id="nationality" name="nationality" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">Create Password</td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Enter Password:</label></td>
+                            <td><input type="password" id="password" name="password" required></td>
+                            <td><label for="confirmPassword">Confirm Password:</label></td>
+                            <td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center;">
+                                <button type="submit"  onclick="validateForm()" style="height: 55px; width: 150px; border-radius: 15px; font-size: larger;">Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div class="right-elem">
+            <img src="/login_pic.jpg" width="90%" height="55%">
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            document.getElementById('name').style.borderColor = "gainsboro";
+            document.getElementById('mobile').style.borderColor = "gainsboro";
+            document.getElementById('email').style.borderColor = "gainsboro";
+            document.getElementById('dob').style.borderColor = "gainsboro";
+            document.getElementById('gender').style.borderColor = "gainsboro";
+            document.getElementById('nationality').style.borderColor = "gainsboro";
+            document.getElementById('password').style.borderColor = "gainsboro";
+            document.getElementById('confirmPassword').style.borderColor = "gainsboro";
+
+            var name = document.getElementById('name').value;
+            var mobile = document.getElementById('mobile').value;
+            var email = document.getElementById('email').value;
+            var dob = document.getElementById('dob').value;
+            var gender = document.getElementById('gender').value;
+            var nationality = document.getElementById('nationality').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            var nameRegex = /^[a-zA-Z\s]+$/;
+            var mobileRegex = /^\d{10}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var dobRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+            if (name === '' || mobile === '' || email === '' || dob === '' || gender === '' || nationality === '' || password === '' || confirmPassword === '') {
+                alert('Please fill in all fields');
+                event.preventDefault();
+            } else if (!name.match(nameRegex)) {
+                alert('Invalid name format. Please use only letters and spaces.');
+                document.getElementById("name").style.borderColor = "red";
+                event.preventDefault();
+            } else if (!mobile.match(mobileRegex)) {
+                document.getElementById("mobile").style.borderColor = "red";
+                alert('Invalid mobile number. Please enter a 10-digit number.');
+                event.preventDefault();
+            } else if (!email.match(emailRegex)) {
+                document.getElementById("email").style.borderColor = "red";
+                alert('Invalid email format.');
+                event.preventDefault();
+            } else if (!dob.match(dobRegex)) {
+                document.getElementById("dob").style.borderColor = "red";
+                alert('Invalid date of birth format. Please use YYYY-MM-DD.');
+                event.preventDefault();
+            } else if (gender === '') {
+                document.getElementById("gender").style.borderColor = "red";
+                alert('Please select a gender');
+                event.preventDefault();
+            } else if (nationality === '') {
+                document.getElementById("nationality").style.borderColor = "red";
+                alert('Please enter your nationality');
+                event.preventDefault();
+            } else if(password !== confirmPassword) {
+                document.getElementById("password").style.borderColor = "red";
+                document.getElementById("confirmPassword").style.borderColor = "red";
+                alert('Passwords do not match');
+            } 
+        }
+    </script>
+</body>
+</html>

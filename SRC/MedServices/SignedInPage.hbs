@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="styles.css">
+    <script>
+        // Function to toggle between light and dark mode styles
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'styles.css' ? 'dark.css' : 'styles.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+      
+</head>
+<body>
+        <ul>
+            <li class="vital"><a href="/">VITAL</a></li>
+            <li>
+                <a href="/profile">
+                    <img src="loggedin_profile.png" 
+                    style="
+                    float:right;
+                    width:42px;
+                    height: 44px;
+                    border-radius: 20px;
+                    margin-top: -5px;
+                    margin-right: -20px">
+                </a>
+            </li>
+            <!-- <li><a href="#news" style="margin-top: 2px;">Treatments</a></li> -->
+            <li><a href="#contact" style="margin-top: 2px;">
+                <button onclick="toggleStyles()"
+                style="
+                border-radius: 20px;
+                margin-top: -3px;
+                background-color: transparent;
+                border: 0;
+                ">
+
+                    <img id="myImage" src="night-mode.png" alt="My Image"
+                    style="
+                    width: 25px;
+                    height: 25px;
+                    border: 0;
+                    ">
+
+                </button>
+                </a>
+            </li>
+            <li><a href="/appointment" class="schedule">Appointment</a></li>
+            <li><a href="/hospitals_signed" class="schedule">Hospital</a></li>
+            <li><a href="/schedule" class="schedule">Report</a></li>
+        </ul>
+    <div class="observer"></div>
+
+    
+   
+    <div class="bgone">
+        <div class="fadein">
+        <div class="introtext">
+            <h1
+            class="anim_1">
+                Your Health, Our Priority
+            </h1>
+            <h4
+            class="anim_1">
+                Vitals is a leading online medical platform dedicated to providing top-notch medical services to patients across the globe. Our innovative approach to healthcare delivery ensures that you receive the best possible care from the comfort of your home.
+            </h4>
+        </div>
+        <svg viewBox="-90 -20 400 400">
+            <defs>
+                <path id="MyPath"
+                d="M 200, 200
+                    m -100, 0
+                    a 100,100 0 1,1 200,0
+                    a 100,100 0 1,1 -200,0
+                " />
+            <!-- <path id="MyPath"
+                    d="M 200, 200
+                    m -100, 0
+                    a 100,100 0 1,1 200, 0
+                    a 100,100 0 1,1 -250,-45
+            " /> -->
+        
+            <!-- Define a pattern with the image -->
+            <pattern id="imagePattern" x="0" y="0" patternUnits="userSpaceOnUse" height="100%" width="100%">
+                <!-- Specify the viewBox for the image to control scaling -->
+                <image href="geriatric.png" x="120" y="120" width="40%" height="40%" preserveAspectRatio="none"/>
+            </pattern>
+            </defs>
+        
+            <!-- Use the pattern as the fill for the circle -->
+            <circle fill="none" stroke="rgb(105, 105, 105)" cx="210" cy="200" r="60" stroke-width="20" filter="blur(10px)" />
+            <circle fill="url(#imagePattern)" cx="200" cy="200" r="78" />
+            
+        
+            <text font-family="Montserrat" font-size="10" fill="teal">
+            <textPath xlink:href="#MyPath" startOffset="15%">
+                Assuring Quality and Timely Health Services At Your Door-Step
+            </textPath>
+            </text>
+        </svg>
+        </div>
+    </div>
+
+<div class="fadein">
+  <h1 class="for_whom">
+    For Whom
+  </h1>
+  <!-- <table class="three" border="3" align="center">
+    <tr>
+        <td><img src="elderly_ani.jpg"><br>Elderly</td>
+        <td><img src="abled_ani.jpg"><br>Specialy abled</td>
+        <td><img src="general_public.jpg"><br>General Public</td>
+    </tr>
+</table> -->
+<table id="pictable" class="five" border="0">
+    <tr>
+        <td>
+            <div class="picone">
+                <img src="elderly_ani.jpg"
+                class="elder_pic1">
+                <div class="imgtextone">
+                <b style="font-size: large;">Elderly</b><br><br>
+                The elderly can turn to primary care physicians, geriatric clinics, and telehealth for medical help. Community outreach, senior centers, and home healthcare offer convenient alternatives, addressing various healthcare needs.
+                <br><br>
+            
+                <a href="/Readmore1_s" class="readmore">Read More</a><br><br>
+                </div>    
+            </div>
+        </td>
+        <td>
+            <div class="pictwo">
+                <img src="abled_ani.jpg" class="abled_pic1">
+                <div class="imgtexttwo">
+                <b style="font-size: large;">Specially Abled</b><br><br>
+                We provide specialized medical support for specially-abled individuals through healthcare, rehabilitation, and telehealth. We prioritize enhancing functionality and fostering community connections for comprehensive assistance.
+                <br><br>
+                <a href="/Readmore2_s" class="readmore">Read More</a><br><br>
+                </div>    
+            </div>
+        </td>
+        <td>
+            <div class="picthree">
+                <img src="general_public.jpg" style="
+                    border-radius: 60px;
+                    margin-left: 80px;
+                    margin-top: -100px;
+                    width: 60%;
+                    height: 20%;
+                    ">
+                <div class="imgtextthree" style="
+                margin-left: 95px;
+                width: 55%;
+                font-family: Poppins;
+                font-size: 13px;
+                text-align: justify;
+                ">
+                <b style="font-size: large;">General Citizen</b><br><br>
+                Our company is dedicated to providing essential medical support for general citizens through accessible healthcare services and community wellness programs ensuring comprehensive assistance and prioritizing the broader community's well-being.
+                <br><br>
+            
+                <a href="/Readmore3_s" class="readmore">Read More</a><br><br>
+                </div>    
+            </div>
+        </td>
+    </tr>
+</table>
+</div>
+
+
+<div class="bgone" style="
+margin-top: -6%;
+padding-bottom: 10px;">
+
+<div class="fadein">
+    <h1 style="
+        text-align: left;
+        font-family: Montserrat;
+        font-size: 40px;
+        margin-top: 5%;
+        margin-left: 2%;
+        margin-bottom: 5%;">
+    <br>
+    Our Services
+    <br><br>
+    <table class="six" style="margin-left: 3%; table-layout: fixed;" border="0" >
+        <tr>
+            <td style="padding-right: 40px"><i class="fa fa-dot-circle-o" style="font-size:24px; color: green;"></i>
+            Home-care Services</td>
+
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+            Diagnostics</td>
+
+            <td rowspan="5" style="padding-left: 160px;">
+            <img src="service.png" style="width: 350px; height: 350px">
+            </td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+                Pathology</td>
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+                Radiology</td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+                Physiotherapy</td>
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+                Food Supplement</td>
+        </tr>
+        <tr>
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+                Medical Supplies</td>
+            <td><i class="fa fa-dot-circle-o" style="font-size:24px; color: green"></i>
+                Consultation</td>
+        </tr>
+        <tr>
+           
+        </tr>
+    </table>
+    <!-- <table class="six" border="0" style="
+     height: 550px; margin-left: -1%;">
+        <tr>
+            <td>
+                <div class="picone">
+                    <img src="doc_appointment_icon_circular.jpg" style="
+                        border-radius: 60px;
+                        margin-left: 100px;
+                        margin-top: -100px;
+                        width: 52%;
+                        height: 20%;
+                        ">
+                    <div class="imgtextone" style="
+                    margin-left: 95px;
+                    width: 55%;
+                    font-family: Poppins;
+                    font-size: 13px;
+                    text-align: justify;
+                    ">
+                    <h1>Book Doctor's Appointment</h1><br><br>
+                    Take control of your health with our health information portal. Access accurate and up-to-date health information on a wide range of topics from common illnesses…<br><br>
+                
+                    <a href="#readmore1">Read More</a><br><br>
+                    </div>    
+                </div>
+            </td>
+            <td>
+                <div class="pictwo">
+                    <img src="patient_report_icon.jpg" style="
+                        border-radius: 60px;
+                        margin-left: 80px;
+                        margin-top: -90px;
+                        width: 60%;
+                        height: 20%;
+                        ">
+                    <div class="imgtexttwo" style="
+                    margin-left: 95px;
+                    width: 55%;
+                    font-family: Poppins;
+                    font-size: 13px;
+                    text-align: justify;
+                    ">
+                    <h1>Hassle-Free Reports</h1><br><br>
+                    Take control of your health with our health information portal. Access accurate and up-to-date health information on a wide range of topics from common illnesses…<br><br>
+                
+                    <a href="#readmore2">Read More</a><br><br>
+                    </div>    
+                </div>
+            </td>
+            <td>
+                <div class="picthree">
+                    <img src="at_home_med_service_icon.jpg" style="
+                        border-radius: 60px;
+                        margin-left: 80px;
+                        margin-top: -100px;
+                        width: 60%;
+                        height: 20%;
+                        ">
+                    <div class="imgtextthree" style="
+                    margin-left: 95px;
+                    width: 55%;
+                    font-family: Poppins;
+                    font-size: 13px;
+                    text-align: justify;
+                    ">
+                    <h1>Relaxed <br> In-Home Service</h1> <br> <br>
+                    Take control of your health with our health information portal. Access accurate and up-to-date health information on a wide range of topics from common illnesses…<br><br>
+                
+                    <a href="#readmorer">Read More</a><br><br>
+                    </div>    
+                </div>
+            </td>
+        </tr>
+    </table> -->
+  </h1>
+</div>
+</div>
+
+<div class="fadein">
+<table class="four" border="0">
+    <tr>
+        <td rowspan="5"
+          class="td_four">
+          Get Your Treatment From Renowned Hospitals</td>
+    </tr>
+    <tr>
+        <td><img src="BMS Hospital.png"></td>
+        <td><img src="Maiya Hospital.png"></td>
+        <td><img src="Nethradhama Hospital.png"></td>
+    </tr>
+    <tr>
+        <td><img src="Aster Hospital.png"></td>
+        <td><img src="Green City Hospital.png"></td>
+        <td><img src="Homeocare International Hospital.png"></td>
+    </tr>
+    <tr>
+        
+    </tr>
+    </table>
+    </div>
+
+    
+    <div class="bgone" style="margin-top: 0%; margin-bottom: -2%;">
+    <div class="fadein">
+        <table style="padding: 10px;">
+            <tr>
+                <td><h1>About</h1></td>
+            </tr>
+            <tr>
+                <td style="
+                    padding: 5%; 
+                    padding-top: 1%; 
+                    font-size: small;
+                    font-family: 'Poppins';
+                    margin-bottom: -2%;">
+                    Welcome to Vital, where compassionate care meets the comfort of home. We are a dedicated team committed to transforming healthcare by bringing comprehensive medical services directly to your doorstep. 
+                    At Vital, we understand the challenges of accessing quality healthcare, especially for those with limited mobility or chronic conditions. Our mission is to bridge this gap by delivering personalized, professional medical care in the familiar surroundings of your home. 
+                    Our skilled team of healthcare professionals, including nurses, physicians, and therapists, are equipped to provide a wide range of services, from routine check-ups to advanced treatments. We prioritize patient well-being and convenience, ensuring that you receive the care you need without the stress of traveling to a medical facility.
+                    We pride ourselves on creating a warm and supportive environment, fostering a strong patient-provider relationship. 
+                    
+                    <br><br>
+                    With cutting-edge technology and a patient-centric approach, Vital  is redefining home healthcare, making it accessible, reliable, and tailored to your unique needs.
+                    Experience the future of healthcare – where your home becomes the center of healing. Trust Vital for compassionate, high-quality medical services delivered right to your doorstep. Your well-being is our priority, and we are here to make healthcare a seamless and positive experience for you and your loved ones.
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;&nbsp;
+                    <a href="#" class="fa fa-facebook" style="text-decoration: none;"></a>&nbsp;&nbsp;
+                    <a href="#" class="fa fa-twitter" style="text-decoration: none;"></a>&nbsp;&nbsp;
+                    <i class="fa fa-instagram" style="color:blue"></i>
+                </td>
+                
+            </tr>
+        </table>
+    </div>
+    </div> 
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-viewport');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            var elementsToObserve = document.querySelectorAll('.fadein');
+            elementsToObserve.forEach(function(element) {
+                observer.observe(element);
+            });
+        });
+    </script>   
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="readmore.css">
+    <title>User Profile</title>
+
+    <script>
+        // Function to toggle between light and dark mode styles
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'profile_style.css' ? 'profile_dark.css' : 'profile_style.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul class="nav">
+            <li style="float:left"><a href="/SignedInPage" class="nav_con">VITAL</a></li>
+            <li>
+                <a href="/profile">
+                    <img src="loggedin_profile.png" 
+                    style="
+                    float:right;
+                    width:42px;
+                    height: 44px;
+                    border-radius: 20px;
+                    margin-top: -5px;
+                    margin-right: -20px">
+                </a>
+            </li>
+            
+            <li class="nav_con">
+                <a href="#contact" style="margin-top: 2px;">
+                <button onclick="toggleStyles()"
+                style="
+                border-radius: 20px;
+                margin-top: -3px;
+                background-color: transparent;
+                border: 0;
+                ">
+
+                <img id="myImage" src="night-mode.png" alt="My Image"
+                style="
+                width: 25px;
+                height: 25px;
+                border: 0;
+                ">
+
+                </button>
+                </a>
+            </li>
+            <li><a href="/appointment" class="schedule" style="margin-top: 2px;">Appointment</a></li>
+            <li><a href="/hospitals_signed" class="schedule" style="margin-top: 2px;">Hospital</a></li>
+            <li class="nav_con"><a href="/schedule" style="margin-top: 2px;">Report</a></li>
+           
+    </ul>
+
+    <h1></h1>
+    <table>
+        <tr>
+            <td style="padding-left: 40px; padding-right: 20px"><img src="abled_ani.jpg"
+                style="
+                    width:300px;
+                    border-radius: 20px;
+                    "></td>
+            <td style="border-right-color: white; padding-left: 30px;">
+                <h1>Specially Abled</h1>
+                Our commitment to providing specialized medical support for specially-abled individuals extends beyond mere healthcare provisions. At the heart of our approach lies a dedication to enhancing functionality and fostering community connections, ensuring comprehensive assistance that transcends traditional medical care.<br><br>
+
+Through our healthcare services, we offer tailored treatment plans designed to address the unique needs and challenges faced by specially-abled individuals. Our team of healthcare professionals, comprising physicians, therapists, and specialists, collaborates closely to deliver personalized care aimed at maximizing independence, mobility, and quality of life.<br><br>
+
+Rehabilitation plays a pivotal role in our holistic approach, focusing not only on physical recovery but also on cognitive, emotional, and social aspects of well-being. Our rehabilitation programs employ evidence-based techniques and state-of-the-art equipment to facilitate skill development, adaptive strategies, and the attainment of functional goals, empowering individuals to live life to the fullest.<br><br>
+
+In keeping with our commitment to accessibility and inclusivity, we harness the power of telehealth to extend our reach and support specially-abled individuals wherever they may be. Through virtual consultations, remote monitoring, and teletherapy sessions, we ensure continuity of care, facilitate ongoing communication with healthcare providers, and empower individuals to actively participate in their own care management.<br><br>
+
+Beyond the realm of healthcare, we recognize the importance of fostering community connections as a vital aspect of holistic support. Our initiatives aim to create inclusive environments where specially-abled individuals can engage with peers, access resources, and participate in meaningful activities that promote social interaction, belonging, and empowerment.<br><br>
+
+Whether through healthcare interventions, rehabilitation services, or telehealth initiatives, our ultimate goal remains the same: to empower specially-abled individuals to lead fulfilling lives, realize their potential, and thrive within their communities. By prioritizing functionality enhancement and community integration, we strive to redefine what comprehensive support means for those with unique abilities, championing their rights, dignity, and inclusion every step of the way.
+            </td>
+        </tr>
+    </table>
+  
+
+</body>
+</html>

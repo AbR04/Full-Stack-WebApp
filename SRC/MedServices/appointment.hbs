@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="main-styles" rel="stylesheet" href="appointment.css">
+
+    <script>
+        function toggleStyles() {
+            const mainStylesheet = document.getElementById('main-styles');
+            const newStylesheet = mainStylesheet.getAttribute('href') === 'appointment.css' ? 'appointment_dark.css' : 'appointment.css';
+
+            mainStylesheet.setAttribute('href', newStylesheet);
+
+            // Toggle between two images
+            var imgElement = document.getElementById('myImage');
+            var currentSrc = imgElement.src;
+
+            if (currentSrc.endsWith('night-mode.png')) {
+                imgElement.src = 'day-mode.png';
+            } else {
+                imgElement.src = 'night-mode.png';
+            }
+        }
+    </script>
+
+</head>
+<body>
+        <ul>
+            <li class="vital"><a href="/SignedInPage">VITAL</a></li>
+            <li>
+                <a href="/profile">
+                    <img src="loggedin_profile.png" 
+                    style="
+                    float:right;
+                    width:42px;
+                    height: 44px;
+                    border-radius: 20px;
+                    margin-top: -5px;
+                    margin-right: -20px">
+                </a>
+            </li>
+            <!-- <li><a href="#news" style="margin-top: 2px;">Treatments</a></li> -->
+            <li>
+                <a href="#contact" style="margin-top: 2px;">
+                    <button onclick="toggleStyles()"
+                    style="
+                    border-radius: 20px;
+                    margin-top: -3px;
+                    background-color: transparent;
+                    border: 0;
+                    ">
+
+                        <img id="myImage" src="night-mode.png" alt="My Image"
+                        style="
+                        width: 25px;
+                        height: 25px;
+                        border: 0;
+                        ">
+
+                    </button>
+                </a>
+            </li>
+            <li><a href="/appointment" class="schedule">Appointment</a></li>
+            <li><a href="/hospitals_signed" class="schedule">Hospital</a></li>
+            <li><a href="/schedule" class="schedule">Report</a></li>
+        </ul>
+    <div class="observer"></div>
+
+    
+   
+    <div class="bgone">
+        <div class="fadein">
+            <div class="introtext">
+                <h1
+                class="anim_1">
+                    About Our Services
+                </h1>
+                <h4
+                class="anim_1">
+                    <div id="letter-by-letter">
+                        Our aim is to improve the quality of life by providing services at het comfort of your home.
+                        We promote health and wellness by providing personalised individual care to allow independence and maximum comfort.
+                        We provide Qualified nursing attenders for wound care, administration of IV/IM injections, Surgical care, Physiotherapy, X-ray facilities etc.
+                        You can find the City's top rated Care giving Services, Trustworthy Senior care givers with  experience &  qualified  profiles,
+                        Most importantly background check documents on every profile. All our staff are well trained for exceptional quality of service.
+                    </div>
+
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+    <h2>Services</h2>
+    
+    <div class="service_opt">
+        <form action="https://formsubmit.co/abhinavravraghu@gmail.com" method="post">
+
+            <table class="inputs_services">
+                <tr>
+                    <td><input type="radio" id="1" name="Appointment for" value="Physiotherapy" onclick="updateBody()">Physiotherapy<br></td>
+                    <td><input type="radio" id="2" name="Appointment for" value="Nursing Attender" onclick="updateBody()">Nursing Attender<br></td>
+                    <td><input type="radio" id="3" name="Appointment for" value="Nutritional Support" onclick="updateBody()">Nutritional Support<br></td>
+                </tr>
+                <tr>
+                    <td><input type="radio" id="4" name="Appointment for" value="Blood & Urine Sample" onclick="updateBody()">Blood & Urine Sample<br></td>
+                    <td><input type="radio" id="5" name="Appointment for" value="Sugar Test" onclick="updateBody()">Sugar Test<br></td>
+                    <td><input type="radio" id="6" name="Appointment for" value="B.P Examination" onclick="updateBody()">B.P Examination<br></td>
+                </tr>
+                <tr>
+                    <td> <input type="radio" id="7" name="Appointment for" value="Wound Care" onclick="updateBody()">Wound Care<br></td>
+                    <td> <input type="radio" id="8" name="Appointment for" value="I/V or I/M Injection" onclick="updateBody()">I/V or I/M &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Injection<br></td>
+                    <td> <input type="radio" id="9" name="Appointment for" value="Nebulizationn" onclick="updateBody()">Nebulization<br></td>
+                </tr>
+                <tr>
+                    <td class="buffer"></td>
+                    <td colspan="1" style="margin-top: 10px;"><input type="radio" id="10" name="Appointment for" value="Trauma Recovery Care" onclick="updateBody()">Trauma Recovery Care<br></td>
+                    <td class="buffer"></td>
+                </tr>
+            </table>
+            <input class="bookbutton" type="submit" value="Book" style="
+            width: 150px; 
+            height: 50px; 
+            font-size: 25px;
+            border-radius: 5px;
+            margin-left: 1040px;
+            font-family: 'Poppins';
+            font-weight: bolder;
+            border-top-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-color: rgba(248, 196, 172, 0.801)
+            ">
+            <input type="hidden" name="Status" value="You've successfully booked an appointment for ">
+              
+            
+        </form>
+    </div>
+    
+    
+
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-viewport');
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            var elementsToObserve = document.querySelectorAll('.fadein');
+            elementsToObserve.forEach(function(element) {
+                observer.observe(element);
+            });
+        });
+
+        function updateBody() {
+        // Get all radio buttons in the form
+        var radios = document.forms[0].elements["Appointment for"];
+        var selectedLanguage = "";
+        // Determine which radio button is checked
+        for (var i = 0, len = radios.length; i < len; i++) {
+            if (radios[i].checked) { // If this radio button is checked
+            selectedLanguage = radios[i].value;
+            break;
+            }
+        }
+        
+        // Update the body field
+        document.forms[0].elements["Status"].value = "You've successfully booked an appointment for " + selectedLanguage + ".";
+        }
+    </script>   
+</body>
+</html>
