@@ -199,3 +199,22 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+------------------------------------------
+Additional Contributor Terms
+------------------------------------------
+
+By submitting contributions to this repository, you agree to the following:
+
+1. **Ownership and Licensing**:
+   - You affirm that your contributions are your original work and that you have the right to grant a license.
+   - You grant the project maintainers a perpetual, worldwide, non-exclusive, royalty-free, irrevocable license to use, reproduce, modify, display, distribute, and sublicense your contributions as part of the project under the terms of the Apache License 2.0.
+
+2. **Warranties**:
+   - You represent that your contributions do not infringe the rights of any third party.
+
+3. **Acceptance**:
+   - Contributions may be accepted, rejected, or modified at the discretion of the maintainers.
+
+4. **Relationship to the Apache License 2.0**:
+   - These additional contributor terms do not modify or replace the terms of the Apache License 2.0 for using or redistributing the software.
