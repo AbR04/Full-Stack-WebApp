@@ -40,3 +40,7 @@
 - **PPT Demonstration**: Created a PPT presentation to demonstrate the backend structure and the approach used, aiding the team in understanding the project’s technical framework.
 - **Sample Website for New Backend Approach**: Built a sample website to showcase the proposed new backend approach, illustrating how it could be implemented to improve the system.
 - **Collaboration and Suggestions**: Provided valuable suggestions regarding backend improvements, contributing to the team’s brainstorming sessions.
+
+---
+
+By contributing to this project, you agree to the terms outlined in the LICENSE file under "Contributor Terms and Conditions.
