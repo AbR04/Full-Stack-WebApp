@@ -43,4 +43,4 @@
 
 ---
 
-By contributing to this project, you agree to the terms outlined in the LICENSE file under "Contributor Terms and Conditions.
+> *Note: By contributing to this repository, you acknowledge that your contributions are licensed under the terms outlined in the [LICENSE](./LICENSE) file.*
